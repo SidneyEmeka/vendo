@@ -1,0 +1,58 @@
+final List<Map<String, dynamic>> products = [
+  {
+    "Title": "Parlour Chair",
+    "Price": 240,
+    "ImageUrl": "assets/images/4.png",
+    "Rating": 3.5,
+    "Colors": ["Ash","White", "Black", "Blue", "Yellow"],
+  },
+  {
+    "Title": "Parlour Chair",
+    "Price": 299,
+    "ImageUrl": "assets/images/2.png",
+    "Rating": 5.0,
+    "Colors": ["Ash","White", "Black", "Blue", "Yellow"],
+  },
+  {
+    "Title": "Parlour Chair",
+    "Price": 399,
+    "ImageUrl": "assets/images/3.png",
+    "Rating": 1.0,
+    "Colors": ["Ash","White", "Black", "Blue", "Yellow"],
+  },
+  {
+    "Title": "Parlour Chair",
+    "Price": 345,
+    "ImageUrl": "assets/images/1.png",
+    "Rating": 2.5,
+    "Colors": ["Ash","White", "Black", "Blue", "Yellow"],
+  },
+  {
+    "Title": "Parlour Chair",
+    "Price": 787,
+    "ImageUrl": "assets/images/5.png",
+    "Rating": 3.0,
+    "Colors": ["Ash","White", "Black", "Blue", "Yellow"],
+  },
+  {
+    "Title": "Parlour Chair",
+    "Price": 423,
+    "ImageUrl": "assets/images/6.png",
+    "Rating": 4.5,
+    "Colors": ["Ash","White", "Black", "Blue", "Yellow"],
+  },
+  {
+    "Title": "Parlour Chair",
+    "Price": 898,
+    "ImageUrl": "assets/images/7.png",
+    "Rating": 1.5,
+    "Colors": ["Ash","White", "Black", "Blue", "Yellow"],
+  },
+  {
+    "Title": "Parlour Chair",
+    "Price": 23,
+    "ImageUrl": "assets/images/2.png",
+    "Rating": 5.0,
+    "Colors": ["Ash","White", "Black", "Blue", "Yellow"],
+  },
+];
