@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:provider/provider.dart';
+import 'package:vendo/utils/cartprovider.dart';
 
 class Productpreview extends StatefulWidget {
   final product;
@@ -43,18 +45,56 @@ class _ProductpreviewState extends State<Productpreview> {
     );
   }
 
+//to hold the selectedColor
+  String selectedColor = "";
+
   Widget selectColor(String color) {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       margin: EdgeInsets.symmetric(horizontal: 5),
       decoration: BoxDecoration(
-          border: Border.all(color: Colors.brown.shade900),
+          color: selectedColor == color
+              ? Colors.green.shade900
+              : Colors.transparent,
+          border: Border.all(
+              color: selectedColor == color
+                  ? Colors.transparent
+                  : Colors.brown.shade900),
           borderRadius: BorderRadius.circular(10)),
-      child: Text(color),
+      child: Text(
+        color,
+        style: TextStyle(
+            color:
+                selectedColor == color ? Colors.white : Colors.brown.shade900),
+      ),
     );
   }
 
+//to hold the colors of the object
   List<String> colors = [];
+
+//fn for the ontap of the bottomnavbar
+  void previewAddtoCart() {
+    if (selectedColor != "") {
+      Provider.of<Cartprovider>(context, listen: false).addToCart({
+        "Title": widget.product["Title"],
+        "Price": widget.product["Price"],
+        "ImageUrl": widget.product["ImageUrl"],
+        "Rating": widget.product["Rating"],
+        "Colors": selectedColor,
+      });
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          duration: Duration(seconds: 1),
+          backgroundColor: Colors.brown.shade900,
+          content: Text("Item added to cart")));
+      //print(Provider.of<Cartprovider>(context, listen: false).cartItems);
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          duration: Duration(milliseconds: 150),
+          backgroundColor: Colors.brown.shade900,
+          content: Text("Please select a color")));
+    }
+  }
 
   @override
   void initState() {
@@ -183,7 +223,14 @@ class _ProductpreviewState extends State<Productpreview> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ...colors.map((aColor) {
-                      return selectColor(aColor);
+                      return GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              selectedColor = aColor;
+                            });
+                            //print(selectedColor);
+                          },
+                          child: selectColor(aColor));
                     })
                   ],
                 ),
@@ -194,12 +241,34 @@ class _ProductpreviewState extends State<Productpreview> {
       ),
       bottomNavigationBar: BottomAppBar(
         color: Colors.transparent,
-        child: ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.brown.shade900,
-              foregroundColor: Colors.white),
-          child: Text("Add to cart"),
+        child: GestureDetector(
+          onTap: previewAddtoCart,
+          child: Container(
+            width: double.infinity,
+            decoration: BoxDecoration(
+                color: Colors.brown.shade900,
+                borderRadius: BorderRadius.circular(15)),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  FontAwesomeIcons.cartPlus,
+                  size: 15,
+                  color: Colors.white,
+                ),
+                SizedBox(
+                  width: 5,
+                ),
+                Text(
+                  "Add to cart",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white,
+                      fontSize: 12),
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );
