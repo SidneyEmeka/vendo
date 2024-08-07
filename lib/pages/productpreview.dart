@@ -171,10 +171,10 @@ class _ProductpreviewState extends State<Productpreview> {
                             color: Colors.green.shade900),
                       ),
                       SizedBox(
-                        width: 20,
+                        width: 10,
                       ),
                       Text(
-                        "Chair price",
+                        "${widget.product["Title"]} price",
                         style: TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.w600,

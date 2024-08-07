@@ -8,14 +8,14 @@ import 'package:vendo/pages/products.dart';
 import '../utils/productcard.dart';
 import 'cart.dart';
 
-class Allproducts extends StatefulWidget {
-  const Allproducts({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
 
   @override
-  State<Allproducts> createState() => _AllproductsState();
+  State<Home> createState() => _HomeState();
 }
 
-class _AllproductsState extends State<Allproducts> {
+class _HomeState extends State<Home> {
   //bottomNavBar index
   int selectedIndex = 0;
 
@@ -39,7 +39,7 @@ class _AllproductsState extends State<Allproducts> {
           BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.house), label: "Home"),
           BottomNavigationBarItem(
-              icon: Icon(FontAwesomeIcons.cartShopping), label: "Cart")
+              icon: Icon(FontAwesomeIcons.cartShopping), label: "Cart"),
         ],
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.transparent,
@@ -47,6 +47,7 @@ class _AllproductsState extends State<Allproducts> {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         selectedItemColor: Colors.brown.shade900,
+        unselectedItemColor: Colors.black54,
       ),
     );
   }

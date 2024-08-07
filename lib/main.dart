@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:vendo/pages/allproducts.dart';
+import 'package:vendo/pages/homepage.dart';
 import 'package:vendo/pages/cart.dart';
 import 'package:vendo/utils/cartprovider.dart';
 
@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
                   color: Colors.black),
               prefixIconColor: Colors.black),
         ),
-        home: const Allproducts(),
+        home: const Home(),
         //home: Cart(),
       ),
     );

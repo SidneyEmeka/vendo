@@ -73,11 +73,11 @@ class _ProductcardState extends State<Productcard> {
                                 fontSize: 10),
                           ),
                           Text(
-                            "Chair Price",
+                            widget.title + " Price",
                             style: TextStyle(
                                 fontWeight: FontWeight.w500,
                                 color: Colors.brown.shade900,
-                                fontSize: 12),
+                                fontSize: 11),
                           ),
                         ],
                       ),

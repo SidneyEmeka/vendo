@@ -14,15 +14,15 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<Cartprovider>(context, listen: false).cartItems;
+    final total = Provider.of<Cartprovider>(context, listen: false).calcTotal();
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: 20,
+        backgroundColor: Colors.brown.shade900,
+        toolbarHeight: 35,
         title: Text(
           "Cart",
           style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 15,
-              color: Colors.brown.shade900),
+              fontWeight: FontWeight.bold, fontSize: 15, color: Colors.white),
         ),
         centerTitle: true,
       ),
@@ -170,6 +170,48 @@ class _CartState extends State<Cart> {
                     itemColor: color,
                     itemPrice: price);
               })
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.transparent,
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          width: double.infinity,
+          decoration: BoxDecoration(
+              color: Colors.brown.shade900,
+              borderRadius: BorderRadius.circular(15)),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(
+                    "Checkout",
+                    style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
+                        fontSize: 12),
+                  ),
+                  SizedBox(
+                    width: 5,
+                  ),
+                  Icon(
+                    FontAwesomeIcons.moneyBills,
+                    size: 12,
+                    color: Colors.white,
+                  ),
+                ],
+              ),
+              Text(
+                "\$$total.00",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 12),
+              )
             ],
           ),
         ),

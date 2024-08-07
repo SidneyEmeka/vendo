@@ -12,4 +12,13 @@ class Cartprovider extends ChangeNotifier{
     cartItems.remove(theProducttoRemove);
     notifyListeners();
   }
+
+  calcTotal(){
+    num total = 0;
+    for(int i = 0; i < cartItems.length; i++){
+      print(cartItems[i]["Price"]);
+      total += cartItems[i]["Price"];
+    }
+    return total;
+  }
 }
