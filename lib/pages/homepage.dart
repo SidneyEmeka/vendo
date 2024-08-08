@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //To maintain scroll position we use indexed stack
+      //To maintain scroll positions when switching between tabs we use indexed stack
       body: IndexedStack(
         index: selectedIndex,
         children: [Products(), Cart()],
