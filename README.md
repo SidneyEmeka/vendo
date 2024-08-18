@@ -9,7 +9,7 @@ Using Provider{{Change Notifier provider}} to manage app state
 		</tr>
 		<tr>
 			<td>
-			<img src="https://github.com/SidneyEmeka/myfiles/blob/master/vendo/preview.gif" alt="Snippet"></img>
+			<img src="https://github.com/SidneyEmeka/myfiles/blob/master/vendo/snippet.gif" alt="Snippet"></img>
 			</td>
 		</tr>
 		<tr>
