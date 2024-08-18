@@ -132,7 +132,7 @@ class _ProductpreviewState extends State<Productpreview> {
           children: [
             previewCard(widget.product["ImageUrl"]),
             SizedBox(
-              height: 10,
+              height: 30,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -142,6 +142,9 @@ class _ProductpreviewState extends State<Productpreview> {
                 SizedBox(width: 10),
                 Expanded(child: previewVariants(widget.product["ImageUrl"])),
               ],
+            ),
+            SizedBox(
+              height: 20,
             ),
             Align(
                 alignment: Alignment.centerLeft,
