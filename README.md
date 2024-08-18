@@ -36,7 +36,7 @@ Using Provider{{Change Notifier provider}} to manage app state
 			<img src="https://github.com/SidneyEmeka/myfiles/blob/master/vendo/filter.png" alt="filtered"></img>
 			</td>
 			<td>
-			<img src="https://github.com/SidneyEmeka/myfiles/blob/master/venndo/cart.png" alt="cart"></img>
+			<img src="https://github.com/SidneyEmeka/myfiles/blob/master/vendo/cart.png" alt="cart"></img>
 			</td>
 		</tr>
 		<tr>
