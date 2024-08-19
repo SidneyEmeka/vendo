@@ -1,6 +1,7 @@
 # vendo
 An app for showcase and sales of furnitures.<br>
-Using Provider{{Change Notifier provider}} to manage app state
+Using Provider{{Change Notifier provider}} to manage app state<br>
+Vendo is built with Flutter
 
 <table align="center">
 	<tbody width="100%">
